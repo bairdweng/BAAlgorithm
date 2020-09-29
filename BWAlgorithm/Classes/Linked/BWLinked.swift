@@ -189,7 +189,7 @@ extension LinkedList {
 
 class BWLinked: NSObject {
     func hello() {
-        let list = LinkedList<String>()
+        _ = LinkedList<String>()
         
     }
 }
