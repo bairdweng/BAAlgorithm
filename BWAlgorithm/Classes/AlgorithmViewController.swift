@@ -11,7 +11,18 @@ import UIKit
 
 class AlgorithmViewController: UIViewController {
     let dataTableView = UITableView()
-    let dataSources = ["Stack", "Queue", "three", "InsertionSort", "BinarySeach", "MergeSort", "BoyerMoore","LinedNode","SkinLinked"]
+    let dataSources = ["Stack",
+                       "Queue",
+                       "three",
+                       "InsertionSort",
+                       "BinarySeach",
+                       "MergeSort",
+                       "BoyerMoore",
+                       "LinedNode",
+                       "SkinLinked",
+                       "BinaryTree",
+                       "BinarySearchTree"
+    ]
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Data Structures and Algorithms"
@@ -76,6 +87,12 @@ extension AlgorithmViewController: UITableViewDelegate, UITableViewDataSource {
             BWLinked().hello()
         case 8:
             BWSkinLinked().hello()
+        case 9:
+            let vc = BWBinaryTreeViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case 10:
+            let vc = BWBinaryTreeSearchViewController()
+            navigationController?.pushViewController(vc, animated: true)
         default:
             break
         }
