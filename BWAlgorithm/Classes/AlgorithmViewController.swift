@@ -14,13 +14,11 @@ class AlgorithmViewController: UIViewController {
     let dataSources = ["Stack",
                        "Queue",
                        "three",
-                       "InsertionSort",
+                       "Sort",
                        "BinarySeach",
-                       "MergeSort",
+                       "========",
                        "BoyerMoore",
                        "LinedNode",
-                       "SkinLinked",
-                       "BinaryTree",
                        "BinarySearchTree"
     ]
     override func viewDidLoad() {
@@ -75,22 +73,18 @@ extension AlgorithmViewController: UITableViewDelegate, UITableViewDataSource {
         case 2:
             print("Tree will be written here")
         case 3:
-            BWInsertionSort.hello()
-
+            let vc = BWSortViewController()
+            navigationController?.pushViewController(vc, animated: true)
         case 4:
             BWBinarySearch.hello()
         case 5:
-            BWMergeSort.hello()
+             print("the space will write other")
         case 6:
             BWBoyerMoore().hello()
         case 7:
-            BWLinked().hello()
-        case 8:
-            BWSkinLinked().hello()
-        case 9:
-            let vc = BWBinaryTreeViewController()
+            let vc = BWLinkedViewController()
             navigationController?.pushViewController(vc, animated: true)
-        case 10:
+        case 8:
             let vc = BWBinaryTreeSearchViewController()
             navigationController?.pushViewController(vc, animated: true)
         default:

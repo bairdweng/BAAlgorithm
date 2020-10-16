@@ -1,25 +1,20 @@
 //
-//  BWBinaryTreeSearchViewController.swift
+//  BWLinkedViewController.swift
 //  BWAlgorithm
 //
-//  Created by bairdweng on 2020/10/12.
+//  Created by bairdweng on 2020/10/13.
 //
 
 import UIKit
 
-class BWBinaryTreeSearchViewController: UIViewController {
-    let cellID = "binary_search_tree_cell_id"
+class BWLinkedViewController: UIViewController {
+    
+    let cellID = "bw_linked_view_cell_id"
     
     let dataSources = [
-        "insert",
-        "delete",
-        "find",
-        "preEach",
-        "inEach",
-        "lastEach",
-        "resetFake",
-        "isvalidFake",
-        "isValid"
+        "single linked",
+        "doubly linked",
+        "single linked",
     ]
     
     lazy var tableView:UITableView = {
@@ -29,10 +24,11 @@ class BWBinaryTreeSearchViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         return tableView
     }()
-    let example = BWBinarySearchTreeExample()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "binary search tree"
+        
+        title = "linked example"
         self.view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
@@ -52,7 +48,7 @@ class BWBinaryTreeSearchViewController: UIViewController {
     */
 
 }
-extension BWBinaryTreeSearchViewController:UITableViewDelegate,UITableViewDataSource {
+extension BWLinkedViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return dataSources.count
     }
@@ -69,26 +65,11 @@ extension BWBinaryTreeSearchViewController:UITableViewDelegate,UITableViewDataSo
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
-            example.clean()
-            for i in 1...10 {
-                example.insert(data: i)
-            }
+            BWSingleLinkedExample().hello()
         case 1:
-            example.delete()
+            BWLinked().hello()
         case 2:
-            example.find()
-        case 3:
-            example.printPre()
-        case 4:
-            example.printIn()
-        case 5:
-            example.printLast()
-        case 6:
-            example.resetFakeBST()
-        case 7:
-            example.isValidFake()
-        case 8:
-            example.isValid()
+            BWSkinLinked().hello()
         default: break
         }
     }

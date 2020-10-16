@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BWMergeSort: NSObject {
+class BWMergeSort: AlgorithmHello {
     /*
      自上而下的实施(递归法)
      */
@@ -108,13 +108,13 @@ class BWMergeSort: NSObject {
         return z[d]
     }
 
-    public static func hello() {
+   func hello() {
         let array = [6.4, 3.5, 7.5, 2.5, 8.9, 4.2, 9.2, 1.1]
-        let result = BWMergeSort().mergeSortBottomUp(array, <)
+        let result = self.mergeSortBottomUp(array, <)
         print("迭代法===========\(result)")
         let array1 = [64, 35, 75, 25, 89, 42, 92, 11]
 
-        let result1 = BWMergeSort().mergeSort(array1)
+        let result1 = self.mergeSort(array1)
         print("递归法===========\(result1)")
     }
 }

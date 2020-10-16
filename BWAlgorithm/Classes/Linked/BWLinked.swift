@@ -163,6 +163,21 @@ extension LinkedList {
         }
     }
     
+    public func reverse2() {
+       head = reverse2(head: head)
+    }
+    
+    /// 递归反转
+    func reverse2(head:Node?)->Node? {
+        if head == nil || head?.next == nil {
+            return head
+        }
+        let node = reverse2(head: head!.next)
+        head!.next!.next = head
+        head!.next = nil
+        return node
+    }
+    
     public func map<U>(transform: (T) -> U) -> LinkedList<U> {
         let result = LinkedList<U>()
         var node = head
@@ -189,7 +204,13 @@ extension LinkedList {
 
 class BWLinked: NSObject {
     func hello() {
-        _ = LinkedList<String>()
-        
+        let list = LinkedList<Int>()
+        for i in 0...10 {
+            list.append(i)
+        }
+        print("输出链表的值：\(list)")
+//        list.reverse()
+        list.reverse2()
+        print("链表反转：\(list)")
     }
 }

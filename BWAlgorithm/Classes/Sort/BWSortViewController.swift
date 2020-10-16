@@ -1,15 +1,22 @@
 //
-//  BWBinaryTreeViewController.swift
+//  BWSortViewController.swift
 //  BWAlgorithm
 //
-//  Created by bairdweng on 2020/10/12.
+//  Created by bairdweng on 2020/10/15.
 //
 
 import UIKit
 
-class BWBinaryTreeViewController: UIViewController {
-    let cellID = "binary_tree_cell_id"
+class BWSortViewController: UIViewController {
+    let cellID = "sort_cell_id"
     
+    let dataSources = [
+        "insertSort",
+        "shellSort",
+        "bubbleSort",
+        "selectionSort",
+        "mergeSort"
+    ]
     lazy var tableView:UITableView = {
         let tableView = UITableView()
         tableView.dataSource = self
@@ -17,28 +24,13 @@ class BWBinaryTreeViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         return tableView
     }()
-    
-    let binaryTree = BWBinaryTreeExample()
-    
-    let dataSources = [
-        "Create Node",
-        "Print Values",
-        "preOrderPrint",
-        "inOrderPrint",
-        "postOrderPrint",
-        "leveOrderPrint",
-        "printTreeHeight"
-    ]
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        title = "binary tree"
-        
+        title = "sort"
         self.view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
-
         // Do any additional setup after loading the view.
     }
     
@@ -54,7 +46,7 @@ class BWBinaryTreeViewController: UIViewController {
     */
 
 }
-extension BWBinaryTreeViewController: UITableViewDelegate, UITableViewDataSource {
+extension BWSortViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return dataSources.count
     }
@@ -71,21 +63,18 @@ extension BWBinaryTreeViewController: UITableViewDelegate, UITableViewDataSource
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
-            binaryTree.createTree()
+            BWInsertionSort().hello()
         case 1:
-            binaryTree.print()
+            BWShellSort().hello()
         case 2:
-            binaryTree.preOrderPrint()
+            BWBubbleSort().hello()
         case 3:
-            binaryTree.inOrderPrint()
+            BWSelectionSort().hello()
         case 4:
-            binaryTree.postOrderPrint()
-        case 5:
-            binaryTree.levelOrderPrint()
-        case 6:
-            binaryTree.printTreeHeight()
-        default:
-            break
+            BWMergeSort().hello()
+        default: break
+            
         }
     }
+    
 }
