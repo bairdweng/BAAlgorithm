@@ -19,7 +19,9 @@ class BWBinaryTreeSearchViewController: UIViewController {
         "lastEach",
         "resetFake",
         "isvalidFake",
-        "isValid"
+        "isValid",
+        "isInBST",
+        "printHeight"
     ]
     
     lazy var tableView:UITableView = {
@@ -89,6 +91,10 @@ extension BWBinaryTreeSearchViewController:UITableViewDelegate,UITableViewDataSo
             example.isValidFake()
         case 8:
             example.isValid()
+        case 9:
+            example.isInBST()
+        case 10:
+            example.printTreeHeight()
         default: break
         }
     }

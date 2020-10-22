@@ -31,9 +31,16 @@ class BWSortViewController: UIViewController {
         tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
+        setTableViewFootView()
         // Do any additional setup after loading the view.
     }
     
+    func setTableViewFootView() {
+        let footImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 300))
+        footImageView.image = UIImage(named: "sort")
+        footImageView.contentMode = .scaleAspectFit
+        tableView.tableFooterView = footImageView
+    }
 
     /*
     // MARK: - Navigation
@@ -73,7 +80,6 @@ extension BWSortViewController:UITableViewDelegate,UITableViewDataSource {
         case 4:
             BWMergeSort().hello()
         default: break
-            
         }
     }
     

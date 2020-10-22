@@ -14,31 +14,26 @@ class BWInsertionSort: NSObject {
     }
     
     func hello() {
-        let numbers = [10, -1, 3, 9, 2]
+        let numbers = [13,8,14,7]
         print("插入排序:\(insertionSort(list: numbers))")
-
+        
     }
     
     // 插入排序的时间复杂度是O(n^2)，但会比冒泡好一点。数据量小会相当快
     func insertionSort(list: [Int]) -> [Int] {
         var sort = list
-        // Extract the second number to start comparison
-        for i in 1 ..< list.count {
-            // 临时存储当前的变量
-            let temp = list[i]
-            // 从第二个数开始处理
+        // 从第二个开始
+        for i in 1..<sort.count {
+            let temple = sort[i]
             var j = i
-            // 如果当前的树小于前面的数组，那么往左边移动
-            while j > 0, temp < sort[j - 1] {
+            while j > 0, temple < sort[j - 1 ] {
                 sort[j] = sort[j - 1]
-                // 往左边移，递减
-                j -= 1
+                j = j - 1
             }
-            // 此时temp 应该填充到原本属于它的位置
-            sort[j] = temp
+            sort[j] = temple
         }
         return sort
     }
     
-   
+    
 }
