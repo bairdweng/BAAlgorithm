@@ -20,6 +20,7 @@ public class LinedListNode<T> {
     }
 }
 
+
 /// 链表
 public class LinkedList<T> {
     public typealias Node = LinedListNode<T>

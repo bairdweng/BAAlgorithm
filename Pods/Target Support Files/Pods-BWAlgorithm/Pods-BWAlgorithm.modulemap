@@ -1,0 +1,6 @@
+framework module Pods_BWAlgorithm {
+  umbrella header "Pods-BWAlgorithm-umbrella.h"
+
+  export *
+  module * { export * }
+}

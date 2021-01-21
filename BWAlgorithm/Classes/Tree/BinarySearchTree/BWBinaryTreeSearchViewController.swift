@@ -72,7 +72,7 @@ extension BWBinaryTreeSearchViewController:UITableViewDelegate,UITableViewDataSo
         switch indexPath.row {
         case 0:
             example.clean()
-            for i in 1...10 {
+            for i in [10,5,25,4,9,11,26,1,2] {
                 example.insert(data: i)
             }
         case 1:

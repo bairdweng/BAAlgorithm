@@ -335,7 +335,7 @@ class BWBinarySearchTreeExample: NSObject {
     }
     
     func delete() {
-        searchTree.delete(data: 3)
+        searchTree.delete(data: 4)
     }
     
     func resetFakeBST() {

@@ -7,11 +7,23 @@
 
 import UIKit
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    func fib(_ n: Int) -> Int {
+        if n  <= 1 {
+            return n;
+        }
+        var first = 0
+        var second = 1
+        for _ in 0..<(n - 1) {
+            let sum = first + second;
+            first = second
+            second = sum
+        }
+        return second
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
